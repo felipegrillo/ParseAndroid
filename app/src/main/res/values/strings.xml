@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ParseAndroid</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="texName">txtNombre</string>
+    <string name="imageView">imagen</string>
+    <string name="titulo">Lista</string>
+    <string name="Lista">Lista de Nombres</string>
+    <string name="Titulo">Lista de Nombres</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="imagen">imgViews</string>
+    <string name="btnActualiza">New Button</string>
+    <string name="btnImage">Button</string>
+    <string name="action_apagar">apagar</string>
+</resources>
