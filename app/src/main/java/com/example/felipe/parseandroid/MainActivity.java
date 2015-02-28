@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-        //        addList();
+             //  addList();
                 addListView();
             }
 
@@ -105,12 +105,14 @@ public class MainActivity extends ActionBarActivity {
 
         try {
             listas = query.find();
+
             for (ParseObject post : listas) {
                 ParseFile imag = post.getParseFile("imagen");
 
                 //Log.i("size", String.valueOf(imag.getData().length));
                 Bitmap img = BitmapFactory.decodeByteArray(imag.getData(), 0, imag.getData().length);
                 mylista.add(new chavodelocho(1, post.getString("Name"), post.getString("Descripcion"), imag.getUrl(), img));
+
 
             }
         } catch (ParseException e) {
@@ -154,7 +156,7 @@ public class MainActivity extends ActionBarActivity {
         ArrayAdapter<chavodelocho> adapter = new MyListAdapter();
         ListView list = (ListView) findViewById(R.id.ListaView);
         list.setAdapter(adapter);
-        ImageView icon = (ImageView) list.findViewById(R.id.imgView);
+
 
 
     }
@@ -220,6 +222,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         public View getView(int posicion, View ConvertView, ViewGroup parent) {
+
             View itemView = ConvertView;
             if (itemView == null) {
                 itemView = getLayoutInflater().inflate(R.layout.item_view, parent, false);
@@ -249,7 +252,7 @@ public class MainActivity extends ActionBarActivity {
             HttpURLConnection conn = null;
             try {
 
-                imageUrl = new URL(fileUrl);
+                imageUrl = new URL("http://files.parsetfss.com/593b397d-df97-4039-a776-b9456460abc6/tfss-28958ab7-c155-4c36-b9be-7d1cca717c10-chilindrina.jpeg");
                 conn = (HttpURLConnection) imageUrl.openConnection();
                 conn.connect();
 
