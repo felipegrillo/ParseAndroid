@@ -13,4 +13,5 @@
     <string name="btnActualiza">New Button</string>
     <string name="btnImage">Button</string>
     <string name="action_apagar">apagar</string>
+    <string name="action_agregar">agregar</string>
 </resources>
