@@ -35,9 +35,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends ActionBarActivity {
-    private ImageView imageView;
-    private Bitmap loadedImage;
-    private String imageHttpAddress = "http://jonsegador.com/wp-content/apezz.png";
+
 
     private List<chavodelocho> mylista = new ArrayList<chavodelocho>();
 
@@ -46,6 +44,8 @@ public class MainActivity extends ActionBarActivity {
 
 
         super.onCreate(savedInstanceState);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         setContentView(R.layout.activity_main);
 
         Parse.enableLocalDatastore(this);
@@ -173,7 +173,7 @@ public class MainActivity extends ActionBarActivity {
         protected Bitmap doInBackground(Void... params) {
             try {
                 URL urlConnection = new URL(url);
-                HttpURLConnection connection = (HttpURLConnection) urlConnection
+                   HttpURLConnection connection = (HttpURLConnection) urlConnection
                         .openConnection();
                 connection.setDoInput(true);
                 connection.connect();
@@ -229,7 +229,7 @@ public class MainActivity extends ActionBarActivity {
             chavodelocho currentChavo = mylista.get(posicion);
             Log.i("Imagen URL", currentChavo.getImagenURL());
             ImageView imag = (ImageView) findViewById(R.id.imgView);
-
+            loadImageFromURL(currentChavo.getImagenURL(),imag);
 
             TextView nombres = (TextView) itemView.findViewById(R.id.txtView);
             nombres.setText(currentChavo.getName());
@@ -249,7 +249,7 @@ public class MainActivity extends ActionBarActivity {
             HttpURLConnection conn = null;
             try {
 
-                imageUrl = new URL("http://jonsegador.com/wp-content/apezz.png");
+                imageUrl = new URL(fileUrl);
                 conn = (HttpURLConnection) imageUrl.openConnection();
                 conn.connect();
 
