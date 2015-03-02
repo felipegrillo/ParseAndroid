@@ -240,7 +240,7 @@ public class MainActivity extends ActionBarActivity {
             TextView descrip = (TextView) itemView.findViewById(R.id.txtVIew2);
             descrip.setText((CharSequence) currentChavo.getDescription());
 
-
+  ///prueba
             return itemView;
 
         }
