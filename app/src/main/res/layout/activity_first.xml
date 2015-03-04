@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.felipe.parseandroid.firstActivity"
+    android:orientation="vertical">
+
+    <ImageView  android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgphoto"
+                android:contentDescription="@string/descripc"
+                android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextNamephoto"
+        android:layout_gravity="center_horizontal"
+        android:hint="Nombre de imagen" />
+
+    <Button     android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subir"
+                android:id="@+id/btnUpload"
+                android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:hint="@string/Nombre" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/Descrip" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar"
+        android:id="@+id/btnSave"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

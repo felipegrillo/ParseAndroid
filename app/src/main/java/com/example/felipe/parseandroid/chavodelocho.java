@@ -4,15 +4,29 @@ import android.graphics.Bitmap;
 import android.media.Image;
 import android.net.Uri;
 
+import com.parse.Parse;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+
 /**
  * Created by ieepo on 27/02/15.
  */
 public class chavodelocho {
-    int image;
+
     String name;
     String description;
     String imagenURL;
-    Bitmap img;
+    ParseFile imags;
+
+    public ParseFile getImags() {
+        return imags;
+    }
+
+    public void setImags(ParseFile imags) {
+        this.imags = imags;
+    }
+
+
 
 
     public String getImagenURL() {
@@ -23,30 +37,17 @@ public class chavodelocho {
         this.imagenURL = imagenURL;
     }
 
-    public Bitmap getImg() {
-        return img;
-    }
 
-    public void setImg(Bitmap img) {
-        this.img = img;
-    }
 
-    public chavodelocho(int image, String name, String description,String imagenURL, Bitmap img) {
+    public chavodelocho(String name, String description,String imagenURL,ParseFile imgs) {
         this.imagenURL=imagenURL;
-        this.img = img;
-        this.image = image;
         this.name = name;
         this.description = description;
+        this.imags=imgs;
 
     }
 
-    public int getImage() {
-        return image;
-    }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
 
     public String getName() {
         return name;

@@ -14,4 +14,21 @@
     <string name="btnImage">Button</string>
     <string name="action_apagar">apagar</string>
     <string name="action_agregar">agregar</string>
+    <string name="actualiza">ACTUALIZA</string>
+    <string name="suma">+</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_first">firstActivity</string>
+    <string name="descripc">descrip</string>
+    <string name="text1">New Text</string>
+    <string name="text2">New Text</string>
+    <string name="Add">Add</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Descrip">Descripcion</string>
+    <string name="guardar">Guardar</string>
+    <string name="subir">Subir Foto</string>
+    <string name="Subir">Subir</string>
+    <string name="title_activity_second">secondActivity</string>
 </resources>
