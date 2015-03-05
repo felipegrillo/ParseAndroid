@@ -65,24 +65,6 @@ public class firstActivity extends ActionBarActivity {
                     ParseObject addData=new ParseObject("Names");
                         EditText namephoto = (EditText) findViewById(R.id.editTextNamephoto);
 
-                        ParseFile file = null;
-
-                        if (selectedImageType.toUpperCase().equals("JPEG") || selectedImageType.toUpperCase().equals("JPG")){
-                            file = new ParseFile(namephoto.getText().toString()+".jpeg", images);
-                        }
-                        else if (selectedImageType.toUpperCase().equals("PNG")){
-                            file = new ParseFile(namephoto.getText().toString(), images);
-                        }
-                        else{
-                            // Show a simple toast message
-                           Log.i("Subir imagen","Subirimagen");
-                        }
-
-                        // Upload the image into Parse Cloud
-                        file.saveInBackground();
-
-                        addData.put("imagen", file);
-
                        EditText nombre=(EditText)findViewById(R.id.editText1);
 
                        ///addData.put("imagen",img.getIm);
@@ -136,42 +118,10 @@ public class firstActivity extends ActionBarActivity {
             if (requestCode == SELECT_PICTURE) {
                 Uri selectedImageUri = data.getData();
                // Uri selectedImage = data.getData();
-                selectedImageType =data.getType();
+                //selectedImageType =data.getType();
                 selectedImagePath = getPath(selectedImageUri);
                 System.out.println("Image Path : " + selectedImagePath);
                 img.setImageURI(selectedImageUri);
-
-
-                try {
-                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),selectedImageUri);
-
-                    // Convert it to byte
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    // Compress image to lower quality scale 1 - 100
-                    if (selectedImageType.toUpperCase().equals("JPEG") || selectedImageType.toUpperCase().equals("JPG")){
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-
-                        // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-                        images = stream.toByteArray();
-                    }
-
-                    else  if (selectedImageType.toUpperCase().equals("PNG")) {
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
-                        // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-                        images = stream.toByteArray();
-                    }
-                    else{
-                       Log.i("Error","Error");
-                    }
-
-                } catch (FileNotFoundException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
 
             }
         }

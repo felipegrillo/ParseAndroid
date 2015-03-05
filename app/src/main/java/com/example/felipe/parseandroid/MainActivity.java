@@ -36,9 +36,7 @@ import com.squareup.picasso.Picasso;
 
 
 
-
-
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
    ImageView imag;
     ParseQuery<ParseObject> query ;
@@ -112,15 +110,10 @@ public class MainActivity extends Activity {
             case R.id.action_apagar:
                 finish();
                 return true;
-
-
-          ///  case addFragment.
+         ///  case addFragment.
             default:
                 return super.onOptionsItemSelected(item);
         }
-
-
-
     }
 
 
